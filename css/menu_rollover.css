@@ -31,7 +31,7 @@ body {
     display: inline-block;
     margin-right: -2px;
     position: relative;
-    padding: 12px 40x;
+    padding: 12px 40px;
     border: 1px solid #9D9FA2;
     border-radius: 1.5px;
     background-color: #387593;
@@ -54,7 +54,7 @@ body {
     padding: 0;
     left: 0;
     position: absolute;
-    top: 20.5px;
+    top: 43.5px;
     width: 125.5px;
     opacity: 0;
     visibility: hidden;
