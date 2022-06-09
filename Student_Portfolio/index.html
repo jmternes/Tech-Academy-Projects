@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width"/>
-    <title>JMT</title>
+    <title>JMT | Software Developer</title>
     <link rel="stylesheet" href="./css/portfolio.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,10 @@
     <!--NAVBAR-->
     <div class="navbar">
         <a href="#home" class="active">Home</a>
+        <a href=#Slideshow>Slideshow</a>
         <a href="#about">About</a>
         <a href="#github">GitHub</a>
-        <a href="#contact">Contact</a>
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
     </div>
 
     <!--Breaks insterted here for space between navbar and first heading-->
@@ -46,6 +47,57 @@
                 <br>Thank you for stopping by, and enjoy!
             </p>
         </strong>
+    </div>
+    <!-- NEW SLIDESHOW SECTION -->
+    <div id="Slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+                <!-- Slide 1/6 -->
+                <div class="mySlides fade">
+                    <img src="" alt="photo of me" class="Slideshow_Images">
+                    <div class="text">Let me help you with your next project!</div>
+                </div>
+                <!-- Slide 2/6 -->
+                <div class="mySlides fade">
+                    <img src="./css/images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, JS logos" class="Slideshow_Images">
+                    <div class="text">I'm a full-stack developer,<br> trained in:<br> HTML, CSS, JavaScript...</div>
+                </div>
+                <!--Slide 3/6 -->
+                <div class="mySlides fade">
+                    <img src="./css/images/Python.png" alt="Pyhton logo" class="Slideshow_Images">
+                    <div class="text">the popular programming language Python...</div>
+                </div>
+                <!-- Slide 4/6 -->
+                <div class="mySlides fade">
+                    <img src="./css/images/C_Sharp_and_Dot_NET.png" alt="C# logo" class="Slideshow_Images">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC...</div>
+                </div>
+                <!-- Slide 5/6 -->
+                <div class="mySlides fade">
+                    <img src="./css/images/SQL_and_Database.jpg" alt="SQL logo" class="Slideshow_Images">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+                <!-- Slide 6/6 -->
+                <div class="mySlides fade">
+                    <img src="" alt="photo of my choosing" class="Slideshow_Images">
+                    <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                </div>
+                <!-- Previous and next buttons-->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- Slideshow dots -->
+            <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
     </div>
 
     <!--About Section-->
@@ -105,25 +157,26 @@
     </div>
 
     <!--Contact Section-->
-    <div class="row" id="contact">
-        <!--Contact image, left column-->
-        <div class="column_2 column_tall">
-            <img src="./css/images/mail.png" alt="Contact Image">
-        </div>
-        <!--Contact form, right column-->
-        <div class="column_1 column_tall">
-            <h1>Contact</h1>
-            <form action="https://formspree.io/f/mvolvjwq" method="POST">
-                <label>Name:</label>
-                    <input type="text" placeholder="Your Name">
-                <label>Email:</label>
-                    <input type="text" name="Email" id="Email" placeholder="Your Email Address">
-                <label>Message:</label>
-                    <input type="text" id="Message" name="Message" placeholder="Please leave your message here">
-                    <input type="submit" value="SUBMIT">
+    <div id="Contact">
+        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/mvolvjwq" method="POST" class="form-container">
+                <h1>Contact</h1>
+                <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Type your name here" name="name" required>
+                <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Type your phone number here" name="phone">
+                <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Type your email address here" name="email" required>
+                <label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Say hello!" name="message">
+
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
             </form>
         </div>
     </div>
+
 
     <!--Footer Section-->
     <footer>
@@ -132,5 +185,6 @@
             <br>
         </p>
     </footer>
+    <script src="js/portfolio.js"></script>
 </body>
 </html>
